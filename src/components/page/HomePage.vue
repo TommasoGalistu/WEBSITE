@@ -9,8 +9,9 @@ export default {
 </script>
 <template>
   <div class="container">
-    <div class="row align-items-stretch">
-      <div class="col-lg-6 col-sm-12">
+    <div class="row">
+      <div class="col-lg-6 col-sm-12 mb-4">
+        <!-- card del curriculum self con foto -->
         <router-link class="link" :to="{ name: 'Selfsummary' }">
           <div class="tcard">
             <div class="contDescription">
@@ -38,19 +39,57 @@ export default {
         </router-link>
       </div>
       <div class="col-lg-6">
-        <div class="row">
-          <div class="col">last work animation</div>
+        <div class="row mb-4">
+          <div class="col">
+            <router-link class="link" :to="{ name: 'Project' }">
+              <div class="tcard">
+                <p>ULTIMO PROGETTO ONLINE</p>
+              </div>
+            </router-link>
+          </div>
         </div>
         <div class="row">
-          <div class="col-sm-6 col-lg-6">
-            <router-link class="link" :to="{ name: 'Curriculum' }"
-              >Curriculum</router-link
-            >
+          <div class="col-sm-6 col-mg-6 mb-4">
+            <router-link class="link" :to="{ name: 'Curriculum' }">
+              <div class="tcard">
+                <div class="contImg littleCard">
+                  <img src="/src/assets/firma.png" alt="" />
+                </div>
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <p class="lessImportant">QUALCOSA SU DI ME</p>
+                    <h4>Curriculum</h4>
+                  </div>
+                  <div class="contImgSvg visible">
+                    <img src="/src/assets/arrow.svg" alt="arrow photo" />
+                  </div>
+                  <div class="contImgSvg hoverEffect">
+                    <img src="/src/assets/arrowHover.svg" alt="arrow photo" />
+                  </div>
+                </div>
+              </div>
+            </router-link>
           </div>
           <div class="col-sm-6 col-lg-6">
-            <router-link class="link" :to="{ name: 'Project' }"
-              >Project</router-link
-            >
+            <router-link class="link" :to="{ name: 'Project' }">
+              <div class="tcard">
+                <div class="contImg littleCard">
+                  <img src="/src/assets/firma.png" alt="" />
+                </div>
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <p class="lessImportant">VETRINA</p>
+                    <h4>Progetti</h4>
+                  </div>
+                  <div class="contImgSvg visible">
+                    <img src="/src/assets/arrow.svg" alt="arrow photo" />
+                  </div>
+                  <div class="contImgSvg hoverEffect">
+                    <img src="/src/assets/arrowHover.svg" alt="arrow photo" />
+                  </div>
+                </div>
+              </div>
+            </router-link>
           </div>
         </div>
       </div>
@@ -60,8 +99,12 @@ export default {
 <style lang='scss' scoped>
 @import "../../style/_variable.scss";
 
+.tcard {
+  display: flex;
+  flex-direction: column;
+}
 .contImg {
-  height: 12rem;
+  height: 15rem;
   border-bottom-left-radius: 20px;
   border-top-right-radius: 20px;
   align-self: flex-end;
@@ -69,6 +112,9 @@ export default {
     border-bottom-right-radius: 20px;
     border-top-left-radius: 20px;
   }
+}
+.contImg.littleCard {
+  height: 8.2rem;
 }
 .contImgSvg {
   height: 3rem;
@@ -78,10 +124,6 @@ export default {
   }
 }
 
-.tcard {
-  display: flex;
-  flex-direction: column;
-}
 .moreImportant,
 .lessImportant {
   color: rgba($color: $colorSite, $alpha: 0.5);
@@ -92,7 +134,8 @@ export default {
 
 .contDescription {
   display: flex;
-  gap: 4rem;
+  align-items: center;
+  gap: 2rem;
 }
 
 @media screen and (max-width: 500px) {

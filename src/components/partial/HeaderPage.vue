@@ -25,7 +25,7 @@ export default {
       <div class="row align-items-center">
         <div class="col">
           <div class="contImg">
-            <img src="/logo.webp" alt="" />
+            <img src="/logo.jpg" alt="" />
           </div>
         </div>
         <div class="col-auto">
