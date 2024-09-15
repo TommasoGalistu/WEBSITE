@@ -23,8 +23,6 @@ export default {
   </main>
   <FooterPage />
 </template>
-<style lang='scss' scoped>
-// @use 'path' as *;
-main {
-}
+<style lang='scss'>
+@import "./style/_variable.scss";
 </style>

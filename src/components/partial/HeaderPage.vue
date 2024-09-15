@@ -71,8 +71,7 @@ export default {
   </header>
 </template>
 <style lang='scss' scoped>
-// @use 'path' as *;
-
+@import "./../../style/_variable.scss";
 .contImg {
   height: 4rem;
   img {
@@ -94,7 +93,7 @@ export default {
     .menu {
       height: 1px;
       width: 2rem;
-      background-color: white;
+      background-color: $colorSite;
       margin: 0.5rem 0;
     }
   }
