@@ -10,14 +10,26 @@ export default {
 <template>
   <div class="container">
     <div class="row align-items-stretch">
-      <div class="col-lg-6 col-sm-12">1</div>
+      <div class="col-lg-6 col-sm-12">
+        <router-link class="link" :to="{ name: 'Selfsummary' }"
+          >Selfsummary</router-link
+        >
+      </div>
       <div class="col-lg-6">
         <div class="row">
-          <div class="col">2</div>
+          <div class="col">last work animation</div>
         </div>
         <div class="row">
-          <div class="col-sm-6 col-lg-6">3</div>
-          <div class="col-sm-6 col-lg-6">4</div>
+          <div class="col-sm-6 col-lg-6">
+            <router-link class="link" :to="{ name: 'Curriculum' }"
+              >Curriculum</router-link
+            >
+          </div>
+          <div class="col-sm-6 col-lg-6">
+            <router-link class="link" :to="{ name: 'Project' }"
+              >Project</router-link
+            >
+          </div>
         </div>
       </div>
     </div>
@@ -25,11 +37,4 @@ export default {
 </template>
 <style lang='scss' scoped>
 // @use 'path' as *;
-
-.col {
-  background-color: grey;
-  // height: 5rem;
-  // width: 5rem;
-  border: 1px solid white;
-}
 </style>

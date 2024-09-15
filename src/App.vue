@@ -1,6 +1,7 @@
 <script>
 import { router } from "./router";
 import HeaderPage from "./components/partial/HeaderPage.vue";
+import FooterPage from "./components/partial/FooterPage.vue";
 export default {
   name: "App",
   data() {
@@ -11,6 +12,7 @@ export default {
   methods: {},
   components: {
     HeaderPage,
+    FooterPage,
   },
 };
 </script>
@@ -19,7 +21,10 @@ export default {
   <main>
     <router-view></router-view>
   </main>
+  <FooterPage />
 </template>
 <style lang='scss' scoped>
 // @use 'path' as *;
+main {
+}
 </style>

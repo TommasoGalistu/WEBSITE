@@ -2,6 +2,10 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import HomePage from "./components/page/HomePage.vue";
 import AboutPage from "./components/page/AboutPage.vue";
+import SelfSummary from "./components/page/SelfSummary.vue";
+import CurriculumPage from "./components/page/CurriculumPage.vue";
+import ProjectPage from "./components/page/ProjectPage.vue";
+import ContactPage from "./components/page/ContactPage.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -13,8 +17,28 @@ const router = createRouter({
     },
     {
       path: "/about",
-      name: "About me",
+      name: "About",
       component: AboutPage,
+    },
+    {
+      path: "/self-summary",
+      name: "Selfsummary",
+      component: SelfSummary,
+    },
+    {
+      path: "/curriculum",
+      name: "Curriculum",
+      component: CurriculumPage,
+    },
+    {
+      path: "/project",
+      name: "Project",
+      component: ProjectPage,
+    },
+    {
+      path: "/contact",
+      name: "Contact",
+      component: ContactPage,
     },
   ],
 });
