@@ -57,7 +57,7 @@ export default {
                 </div>
                 <div class="d-flex justify-content-between">
                   <div>
-                    <p class="lessImportant">QUALCOSA SU DI ME</p>
+                    <p class="lessImportant">SU DI ME</p>
                     <h4>Curriculum</h4>
                   </div>
                   <div class="contImgSvg visible">

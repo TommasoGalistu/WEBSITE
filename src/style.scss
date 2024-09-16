@@ -65,3 +65,15 @@ header {
 p {
   margin: 0;
 }
+
+.lessImportant {
+  color: rgba($color: $colorSite, $alpha: 0.5);
+}
+
+.contImgSvg {
+  height: 3rem;
+  align-self: flex-end;
+  img {
+    height: 100%;
+  }
+}
