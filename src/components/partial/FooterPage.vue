@@ -8,8 +8,14 @@ export default {
 };
 </script>
 <template>
-  <h1>footer</h1>
+  <footer>
+    <h1>footer</h1>
+  </footer>
 </template>
 <style lang='scss' scoped>
 // @use 'path' as *;
+
+footer {
+  height: 20rem;
+}
 </style>

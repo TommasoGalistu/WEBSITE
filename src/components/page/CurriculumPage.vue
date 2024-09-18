@@ -2,28 +2,56 @@
 export default {
   name: "CurriculumPage",
   data() {
-    return {};
+    return {
+      stopSticky: false,
+    };
   },
-  methods: {},
+  methods: {
+    changeSticky() {
+      // fermo il contenitore prima de footer
+      let stickyElement = this.$refs.stickyElement;
+      let container = this.$refs.container;
+      // Ottieni l'altezza del contenitore
+      const containerBottom = container.getBoundingClientRect().bottom;
+      console.log(containerBottom);
+
+      const stickyHeight = stickyElement.offsetHeight;
+      const windowHeight = window.innerHeight;
+      // Verifica se l'elemento sticky ha raggiunto il fondo del contenitore
+      if (containerBottom <= windowHeight + stickyHeight) {
+        // Usa transform per "fermare" lo sticky all'interno del contenitore
+        stickyElement.style.transform = `translateY(${
+          containerBottom - windowHeight - stickyHeight
+        }px)`;
+      } else {
+        // Reset transform per mantenere lo sticky normale
+        stickyElement.style.transform = "none";
+      }
+    },
+  },
+  mounted() {
+    window.addEventListener("scroll", this.changeSticky);
+  },
 };
 </script>
 <template>
-  <div class="container">
+  <div class="container" ref="container">
     <div class="row">
-      <div class="col-md-3 col-xs-12 foto">
+      <div class="col-md-4 col-xs-12 foto" ref="stickyElement">
         <div
           class="tcard d-flex flex-column justify-content-center align-items-center gap-3"
         >
           <div class="contImg">
             <img src="/src/assets/curriculum.jpg" alt="foto profilo tommy" />
           </div>
-          <h3 class="">Tommaso Galistu</h3>
+          <h3 class="mt-1">Tommaso Galistu</h3>
+          <p class="lessImportant">Junior Full Stack Developer</p>
           <router-link class="link" :to="{ name: 'Contact' }"
             >Contattami</router-link
           >
         </div>
       </div>
-      <div class="col-md-9 col-xs-12 lung">
+      <div class="col-md-8 col-xs-12 lung">
         <div class="tcard">
           <div class="contDescription">
             <p class="lessImportant">2024 – Presente</p>
@@ -75,6 +103,40 @@ export default {
               per operare in ambienti Agile.
             </p>
           </div>
+          <div class="contDescription text-center">
+            <h4>SKILL</h4>
+            <div class="container">
+              <div class="row mb-3">
+                <div class="col">
+                  <div class="tcard d-flex flex-column gap-2">
+                    <h5 class="importantText">Html</h5>
+                    <h5 class="importantText">CSS</h5>
+                    <h5 class="importantText">Bootstrap</h5>
+                    <h5 class="importantText">JavaScript</h5>
+                    <h5 class="importantText">Vue</h5>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="tcard d-flex flex-column gap-2">
+                    <h5 class="importantText">Php</h5>
+                    <h5 class="importantText">Laravel</h5>
+                    <h5 class="importantText">MySql</h5>
+                  </div>
+                </div>
+              </div>
+              <h4>OTHER</h4>
+              <div class="row">
+                <div class="col text-center">
+                  <div class="tcard d-flex flex-column gap-2">
+                    <h5 class="importantText">Git</h5>
+                    <h5 class="importantText">GitHub</h5>
+                    <h5 class="importantText">Vite</h5>
+                    <h5 class="importantText">Sass</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -82,15 +144,26 @@ export default {
 </template>
 <style lang='scss' scoped>
 @import "./../../style/_variable.scss";
-.foto {
-  height: 5rem;
-  position: sticky;
-  top: 2rem;
-}
+// .foto {
+//   height: 7rem;
+//   position: sticky;
+//   top: 6rem;
+// }
+
 @media screen and (max-width: 768px) {
   .foto {
     position: relative;
     top: 0;
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .foto {
+    height: 6rem;
+    position: sticky;
+    top: 0;
+  }
+  .foto.active {
   }
 }
 
@@ -108,5 +181,8 @@ export default {
 }
 .contDescription {
   margin-bottom: 3rem;
+}
+.importantText {
+  color: $colorImportantText;
 }
 </style>

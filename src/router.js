@@ -5,6 +5,7 @@ import AboutPage from "./components/page/AboutPage.vue";
 import SelfSummary from "./components/page/SelfSummary.vue";
 import CurriculumPage from "./components/page/CurriculumPage.vue";
 import ProjectPage from "./components/page/ProjectPage.vue";
+import ProjectOne from "./components/page/ProjectOne.vue";
 import ContactPage from "./components/page/ContactPage.vue";
 
 const router = createRouter({
@@ -33,7 +34,43 @@ const router = createRouter({
     {
       path: "/project",
       name: "Project",
-      component: ProjectPage,
+      children: [
+        {
+          path: "/project",
+          name: "Project",
+          component: ProjectPage,
+        },
+        {
+          path: ":id",
+          name: "ProjectOne",
+          component: ProjectOne,
+        },
+        {
+          path: ":id",
+          name: "ProjectOne",
+          component: ProjectOne,
+        },
+        {
+          path: ":id",
+          name: "ProjectOne",
+          component: ProjectOne,
+        },
+        {
+          path: ":id",
+          name: "ProjectOne",
+          component: ProjectOne,
+        },
+        {
+          path: ":id",
+          name: "ProjectOne",
+          component: ProjectOne,
+        },
+        {
+          path: ":id",
+          name: "ProjectOne",
+          component: ProjectOne,
+        },
+      ],
     },
     {
       path: "/contact",

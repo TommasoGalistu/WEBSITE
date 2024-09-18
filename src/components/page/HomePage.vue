@@ -41,7 +41,10 @@ export default {
       <div class="col-lg-6">
         <div class="row mb-4">
           <div class="col">
-            <router-link class="link" :to="{ name: 'Project' }">
+            <router-link
+              class="link"
+              :to="{ name: 'ProjectOne', params: { id: 0 } }"
+            >
               <div class="tcard">
                 <p>ULTIMO PROGETTO ONLINE</p>
               </div>
@@ -98,7 +101,9 @@ export default {
 </template>
 <style lang='scss' scoped>
 @import "../../style/_variable.scss";
-
+h1 {
+  font-size: 1.7rem;
+}
 .tcard {
   display: flex;
   flex-direction: column;

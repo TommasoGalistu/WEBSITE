@@ -45,16 +45,6 @@ export default {
             <h4 class="importantText">
               Junior Full Stack Developer – Progetti Personali
             </h4>
-            <div class="contTeck">
-              <span class="teck">HTML</span>
-              <span class="teck">CSS</span>
-              <span class="teck">BOOTSTRAP</span>
-              <span class="teck">JAVASCRIPT</span>
-              <span class="teck">VUE</span>
-              <span class="teck">PHP</span>
-              <span class="teck">MYSQL</span>
-              <span class="teck">LARAVEL</span>
-            </div>
           </div>
           <div>
             <p class="lessImportant">Boolean – 2024</p>
@@ -90,7 +80,7 @@ export default {
           <div class="tcard route">
             <div class="d-flex justify-content-between">
               <div>
-                <p class="lessImportant">TORNA INDIETRO</p>
+                <p class="lessImportant">PANORAMICA</p>
                 <h4>Home</h4>
               </div>
               <div class="contImgSvg visible">
@@ -186,8 +176,6 @@ export default {
   gap: 0.5rem;
 }
 .teck {
-  padding: 0.5rem 1rem;
-  border: 1px solid rgb(169, 169, 255);
 }
 @media screen and (max-width: 994px) {
   .contImg {
