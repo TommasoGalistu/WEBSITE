@@ -66,24 +66,52 @@ export default {
         <div class="tcard text-center formContainer">
           <span class="importantText"> Contattami</span>
 
-          <form @submit.prevent="sendEmail">
-            <div>
-              <label for="name">Nome:</label>
-              <input type="text" v-model="form.name" id="name" required />
+          <form @submit.prevent="sendEmail" class="form-control p-4">
+            <div class="mb-3">
+              <label for="name" class="form-label">Nome:</label>
+              <input
+                type="text"
+                v-model="form.name"
+                id="name"
+                class="form-control"
+                placeholder="Scrivi il tuo nome"
+                required
+              />
             </div>
-            <div>
-              <label for="email">Email:</label>
-              <input type="email" v-model="form.email" id="email" required />
+            <div class="mb-3">
+              <label for="email" class="form-label">Email:</label>
+              <input
+                type="email"
+                v-model="form.email"
+                id="email"
+                class="form-control"
+                placeholder="Scrivi la tua email"
+                required
+              />
             </div>
-            <div>
-              <label for="subject">Oggetto:</label>
-              <input type="text" v-model="form.subject" id="subject" required />
+            <div class="mb-3">
+              <label for="subject" class="form-label">Oggetto:</label>
+              <input
+                type="text"
+                v-model="form.subject"
+                id="subject"
+                class="form-control"
+                placeholder="Scrivi l'oggetto"
+                required
+              />
             </div>
-            <div>
-              <label for="message">Messaggio:</label>
-              <textarea v-model="form.message" id="message" required></textarea>
+            <div class="mb-3">
+              <label for="message" class="form-label">Messaggio:</label>
+              <textarea
+                v-model="form.message"
+                id="message"
+                class="form-control"
+                rows="4"
+                placeholder="Scrivi il tuo messaggio"
+                required
+              ></textarea>
             </div>
-            <button type="submit">Invia</button>
+            <button type="submit" class="btn btn-primary">Invia</button>
           </form>
         </div>
       </div>
@@ -95,11 +123,7 @@ export default {
 .contInfo {
   margin-bottom: 3rem;
 }
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
+
 h2 {
   display: inline-block;
 }
