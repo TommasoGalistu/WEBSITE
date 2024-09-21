@@ -5,6 +5,9 @@ export default {
     return {};
   },
   methods: {},
+  mounted() {
+    // Avvia l'animazione quando il componente è montato
+  },
 };
 </script>
 <template>
@@ -16,10 +19,7 @@ export default {
           <div class="tcard">
             <div class="contDescription">
               <div class="contImg">
-                <img
-                  src="/src/assets/curriculum.jpg"
-                  alt="foto profilo tommy"
-                />
+                <img src="/src/assets/profilo.png" alt="foto profilo tommy" />
               </div>
               <div class="contText">
                 <p class="moreImportant">FULL STACK DEVELOPER</p>
@@ -45,8 +45,8 @@ export default {
               class="link"
               :to="{ name: 'ProjectOne', params: { id: 0 } }"
             >
-              <div class="tcard">
-                <p>ULTIMO PROGETTO ONLINE</p>
+              <div class="tcard banner">
+                <p>Ultimo progetto online</p>
               </div>
             </router-link>
           </div>
@@ -56,7 +56,7 @@ export default {
             <router-link class="link" :to="{ name: 'Curriculum' }">
               <div class="tcard">
                 <div class="contImg littleCard">
-                  <img src="/src/assets/firma.png" alt="" />
+                  <img src="/src/assets/foto_curriculum.png" alt="" />
                 </div>
                 <div class="d-flex justify-content-between">
                   <div>
@@ -77,7 +77,11 @@ export default {
             <router-link class="link" :to="{ name: 'Project' }">
               <div class="tcard">
                 <div class="contImg littleCard">
-                  <img src="/src/assets/firma.png" alt="" />
+                  <img
+                    class="photoProject"
+                    src="/src/assets/project_photo.png"
+                    alt="foto progetto"
+                  />
                 </div>
                 <div class="d-flex justify-content-between">
                   <div>
@@ -110,12 +114,15 @@ h1 {
 }
 .contImg {
   height: 15rem;
-  border-bottom-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-radius: 20px;
   align-self: flex-end;
+  width: 100%;
   img {
-    border-bottom-right-radius: 20px;
-    border-top-left-radius: 20px;
+    border-radius: 20px;
+    height: 100%;
+  }
+  .photoProject {
+    width: 100%;
   }
 }
 .contImg.littleCard {
@@ -142,6 +149,23 @@ h1 {
   align-items: center;
   gap: 2rem;
 }
+// .banner {
+//   position: relative;
+//   width: 100%;
+//   height: 70px;
+
+//   overflow: hidden; /* Nasconde le lettere che escono dal contenitore */
+// }
+// .moving-word {
+//   position: relative;
+//   white-space: nowrap; /* Impedisce che il testo vada a capo */
+//   height: 100%;
+// }
+
+// .letter {
+//   position: absolute;
+//   transition: opacity 0.5s ease-in-out; /* Animazione per lo sparire/riapparire */
+// }
 
 @media screen and (max-width: 500px) {
   .tcard {

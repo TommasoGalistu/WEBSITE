@@ -24,9 +24,11 @@ export default {
     <div class="container">
       <div class="row align-items-center">
         <div class="col">
-          <div class="contImg">
-            <img src="/logo.jpg" alt="" />
-          </div>
+          <router-link :to="{ name: 'Home' }">
+            <div class="contImg">
+              <img src="/logo.png" alt="" />
+            </div>
+          </router-link>
         </div>
         <div class="col-auto">
           <nav class="d-flex justify-content-center gap-2 menuLaptop">

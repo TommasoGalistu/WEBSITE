@@ -13,7 +13,7 @@ export default {
       <div class="col-lg-4 col-sm-12 d-flex justify-content-center">
         <div class="tcard image">
           <div class="contImg">
-            <img src="/src/assets/profilo.jpg" alt="foto profilo" />
+            <img src="/src/assets/self_curriculum.png" alt="foto profilo" />
           </div>
         </div>
       </div>

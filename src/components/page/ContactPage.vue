@@ -11,30 +11,67 @@ export default {
         message: "",
       },
       emailSent: false,
+      // inizio controlli
+      nameLength: false,
+      emailError: false,
+      subjectLength: false,
+      messageLength: false,
     };
   },
   methods: {
     sendEmail() {
-      const serviceID = "service_3gm2suh"; // Sostituisci con il tuo Service ID da EmailJS
-      const templateID = "template_pjqfm3p"; // Sostituisci con il tuo Template ID
-      const userID = "4PLSrtVRdufkeuRQ8"; // Sostituisci con il tuo User ID
+      let isValidate = this.checkValidate();
+      if (isValidate) {
+        const serviceID = "service_3gm2suh"; // Sostituisci con il tuo Service ID da EmailJS
+        const templateID = "template_pjqfm3p"; // Sostituisci con il tuo Template ID
+        const userID = "4PLSrtVRdufkeuRQ8"; // Sostituisci con il tuo User ID
 
-      const templateParams = {
-        from_name: this.form.name,
-        from_email: this.form.email,
-        subject: this.form.subject,
-        message: this.form.message,
-      };
+        const templateParams = {
+          from_name: this.form.name,
+          from_email: this.form.email,
+          subject: this.form.subject,
+          message: this.form.message,
+        };
 
-      emailjs
-        .send(serviceID, templateID, templateParams, userID)
-        .then(() => {
-          this.emailSent = true;
-          this.resetForm();
-        })
-        .catch((error) => {
-          console.error("Errore nell'invio dell'email: ", error);
-        });
+        // emailjs
+        //   .send(serviceID, templateID, templateParams, userID)
+        //   .then(() => {
+        //     this.emailSent = true;
+        //     this.resetForm();
+        //   })
+        //   .catch((error) => {
+        //     console.error("Errore nell'invio dell'email: ", error);
+        //   });
+        console.log("inviato");
+      } else {
+        console.log("NON inviato");
+      }
+    },
+    checkValidate() {
+      // controllo nome valido
+
+      this.nameLength = this.form.name.trim().length < 3;
+
+      // controllo email valida
+      const regex = new RegExp(
+        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+      );
+      this.emailError = !regex.test(this.form.email.trim());
+
+      // controllo subject validità
+
+      this.subjectLength = this.form.subject.trim().length < 3;
+
+      this.messageLength = this.form.message.trim().length < 15;
+
+      // se è false ci sono problemi se è true non ci sono problemi
+      let errorGeneral =
+        !this.nameLength &&
+        !this.emailError &&
+        !this.subjectLength &&
+        !this.messageLength;
+
+      return errorGeneral;
     },
     resetForm() {
       this.form = {
@@ -60,6 +97,18 @@ export default {
             <p class="lessImportant">Telefono</p>
             <p>+39 3400009656</p>
           </div>
+          <div class="contInfo">
+            <p class="lessImportant">Linkedin</p>
+
+            <a href="https://www.linkedin.com/in/tommasogalistu/"
+              >Profilo Linkedin</a
+            >
+          </div>
+          <div class="contInfo">
+            <p class="lessImportant">GitHub</p>
+
+            <a href="https://github.com/TommasoGalistu">Profilo GitHub</a>
+          </div>
         </div>
       </div>
       <div class="col-lg-8 col-md-7 col-sm-12">
@@ -77,6 +126,7 @@ export default {
                 placeholder="Scrivi il tuo nome"
                 required
               />
+              <small v-if="nameLength">Inserisci un nome valido</small>
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Email:</label>
@@ -88,6 +138,7 @@ export default {
                 placeholder="Scrivi la tua email"
                 required
               />
+              <small v-if="emailError">Scrivi una email valida</small>
             </div>
             <div class="mb-3">
               <label for="subject" class="form-label">Oggetto:</label>
@@ -99,6 +150,9 @@ export default {
                 placeholder="Scrivi l'oggetto"
                 required
               />
+              <small v-if="subjectLength"
+                >L'oggetto deve essere maggiore di 3 lettere</small
+              >
             </div>
             <div class="mb-3">
               <label for="message" class="form-label">Messaggio:</label>
@@ -110,6 +164,9 @@ export default {
                 placeholder="Scrivi il tuo messaggio"
                 required
               ></textarea>
+              <small v-if="messageLength"
+                >Il messaggio deve essere più lungo di 15 lettere</small
+              >
             </div>
             <button type="submit" class="btn btn-primary">Invia</button>
           </form>

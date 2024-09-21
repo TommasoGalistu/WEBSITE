@@ -42,7 +42,7 @@ export default {
           class="tcard d-flex flex-column justify-content-center align-items-center gap-3"
         >
           <div class="contImg">
-            <img src="/src/assets/curriculum.jpg" alt="foto profilo tommy" />
+            <img src="/src/assets/profilo.png" alt="foto profilo tommy" />
           </div>
           <h3 class="mt-1">Tommaso Galistu</h3>
           <p class="lessImportant">Junior Full Stack Developer</p>
