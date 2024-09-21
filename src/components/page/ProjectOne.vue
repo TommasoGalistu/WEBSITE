@@ -42,15 +42,6 @@ export default {
   mounted() {
     window.addEventListener("scroll", this.changeSticky);
   },
-  beforeRouteLeave(to, from, next) {
-    console.log(to.name);
-
-    if (to.name === "Project") {
-      next();
-    } else {
-      next({ name: "Project" }); // Forza la navigazione verso la pagina padre
-    }
-  },
 };
 </script>
 <template>
