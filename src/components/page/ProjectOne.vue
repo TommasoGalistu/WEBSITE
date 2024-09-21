@@ -1,5 +1,6 @@
 <script>
 import { data } from "../../data";
+import ScrollMagic from "scrollmagic";
 export default {
   name: "ProjectOne",
   data() {
@@ -13,41 +14,60 @@ export default {
   //     index: Number,
   //   },
   methods: {
-    changeSticky() {
-      // fermo il contenitore prima de footer
-      let stickyElement = this.$refs.stickyElement;
-      let container = this.$refs.container;
-      // Ottieni l'altezza del contenitore
-      const containerBottom = container.getBoundingClientRect().bottom;
-      console.log(containerBottom);
-
-      const stickyHeight = stickyElement.offsetHeight;
-      const windowHeight = window.innerHeight;
-      // Verifica se l'elemento sticky ha raggiunto il fondo del contenitore
-      if (containerBottom <= windowHeight + stickyHeight) {
-        // Usa transform per "fermare" lo sticky all'interno del contenitore
-        stickyElement.style.transform = `translateY(${
-          containerBottom - windowHeight - stickyHeight
-        }px)`;
-      } else {
-        // Reset transform per mantenere lo sticky normale
-        stickyElement.style.transform = "none";
-      }
-    },
+    // changeSticky() {
+    //   // fermo il contenitore prima de footer
+    //   const stickyElement = this.$refs.stickyElement;
+    //   const container = this.$refs.cont;
+    //   const containerRect = container.getBoundingClientRect();
+    //   const stickyRect = stickyElement.getBoundingClientRect();
+    //   const stickyHeight = stickyElement.offsetHeight;
+    //   const windowHeight = window.innerHeight;
+    //   const containerBottom = containerRect.bottom;
+    //   // Verifica se l'elemento sticky ha raggiunto il fondo del contenitore
+    //   if (containerBottom <= windowHeight - stickyHeight) {
+    //     // Usa transform per "fermare" lo sticky all'interno del contenitore
+    //     stickyElement.style.transform = `translateY(${
+    //       containerBottom - windowHeight - stickyHeight
+    //     }px)`;
+    //   } else {
+    //     // Reset transform per mantenere lo sticky normale
+    //     stickyElement.style.transform = "none";
+    //   }
+    // },
   },
   created() {
     this.projectId = this.$route.params.id;
     this.card = data.cardProject[this.$route.params.id];
   },
   mounted() {
-    window.addEventListener("scroll", this.changeSticky);
+    // Crea un nuovo controller ScrollMagic
+    const controller = new ScrollMagic.Controller();
+    const pageHeight = document.documentElement.scrollHeight;
+    new ScrollMagic.Scene({
+      triggerElement: this.$refs.pinElement,
+      triggerHook: 0.05, // Pinnato prima che raggiunga il top della pagina
+      duration: pageHeight * 0.23,
+    })
+      .setPin(this.$refs.pinElement, { pushFollowers: true })
+      .on("enter", (event) => {
+        const spacer = document.querySelector(".scrollmagic-pin-spacer");
+        spacer.style.width = "calc((100% / 12) * 4)";
+        spacer.style.height = "500px";
+        spacer.style.margin = "0";
+        spacer.style.padding = "0";
+        this.$refs.pinElement.style.transition =
+          "transform 0.3s ease, top 0.3s ease";
+      })
+      .addTo(controller);
+
+    // window.addEventListener("scroll", this.changeSticky);
   },
 };
 </script>
 <template>
-  <div class="container" ref="container">
-    <div class="row">
-      <div class="col-md-4 col-xs-12 foto" ref="stickyElement">
+  <div class="container" ref="cont">
+    <div class="trow">
+      <div class="tcol foto pin-spacer" ref="pinElement">
         <div
           class="tcard d-flex flex-column justify-content-center align-items-center gap-3"
         >
@@ -60,7 +80,7 @@ export default {
           <a :href="card.linkGit">GitHub</a>
         </div>
       </div>
-      <div class="col-md-8 col-xs-12 lung">
+      <div class="tcol colDestra">
         <div class="tcard">
           <div class="contDescription">
             <h3 class="importantText">Descrizione del progetto</h3>
@@ -96,6 +116,7 @@ export default {
 </template>
 <style lang='scss' scoped>
 @import "../../style/_variable.scss";
+
 @media screen and (max-width: 768px) {
   .foto {
     position: relative;
@@ -109,6 +130,7 @@ export default {
     position: sticky;
     top: 0;
   }
+
   .foto.active {
   }
 }
@@ -137,5 +159,25 @@ export default {
   margin-top: 2rem;
   border-radius: 50%;
   border: 1px solid $colorSite;
+}
+.pin-spacer {
+  width: calc((100% / 12) * 4);
+  position: relative; /* Evita sovrapposizioni */
+  margin: 0;
+  padding: 0;
+  transition: transform 0.3s ease, top 0.3s ease;
+  transition: top 0.3s ease; /* Imposta una transizione dolce per la posizione */
+}
+.trow {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+.colDestra {
+  width: calc((100% / 12) * 8);
+}
+.scrollmagic-pin-spacer {
+  transition: all 0.3s ease;
 }
 </style>
