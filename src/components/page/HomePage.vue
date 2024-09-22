@@ -122,9 +122,6 @@ h1 {
     border-radius: 20px;
     height: 100%;
   }
-  .photoProject {
-    width: 100%;
-  }
 }
 .contImg.littleCard {
   height: 8.2rem;
@@ -182,6 +179,16 @@ h1 {
 //   transition: opacity 0.5s ease-in-out; /* Animazione per lo sparire/riapparire */
 // }
 
+@media screen and (max-width: 1200px) {
+  .photoProject {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .photoProject {
+    width: auto;
+  }
+}
 @media screen and (max-width: 500px) {
   .tcard {
     flex-direction: column;

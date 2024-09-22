@@ -44,7 +44,7 @@ export default {
                   >
                     {{ tipi }}
                   </p>
-                  <h4>{{ card.titolo }}</h4>
+                  <h4 class="title">{{ card.titolo }}</h4>
                 </div>
                 <div class="contImgSvg visible">
                   <img src="/src/assets/arrow.svg" alt="arrow photo" />
@@ -80,7 +80,7 @@ export default {
                       >
                         {{ tipi }}
                       </p>
-                      <h4>{{ card.titolo }}</h4>
+                      <h4 class="title">{{ card.titolo }}</h4>
                     </div>
                     <div class="contImgSvg visible">
                       <img src="/src/assets/arrow.svg" alt="arrow photo" />
@@ -119,6 +119,11 @@ h2 {
   width: 100%;
   img {
     width: 100%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .title {
+    font-size: 1.3rem;
   }
 }
 @media screen and (max-width: 768px) {

@@ -9,6 +9,7 @@
 body {
   background-color: $backgroundSite;
   color: $colorSite;
+  position: relative;
 }
 // [class^="col-"],
 // .col {
@@ -89,6 +90,7 @@ small {
   color: $colorTextButton;
   background-color: $colorButton;
   border-radius: 20px;
+  color: black;
   &:hover {
     background-color: $colorButtonHover;
     transition: background-color 0.2s ease-in-out;

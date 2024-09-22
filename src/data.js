@@ -3,6 +3,7 @@ import { reactive } from "vue";
 export const data = reactive({
   styleHeader: {},
   styleMenu: {},
+  isActiveHeader: false,
   containerMain: {},
   cardProject: [
     {

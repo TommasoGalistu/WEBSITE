@@ -54,7 +54,7 @@ export default {
           </div>
           <h3 class="mt-1">{{ card.titolo }}</h3>
           <p class="lessImportant">{{ card.tipo[0] }}</p>
-          <a :href="card.link" class="button">Vedi il progetto</a>
+          <a :href="card.link" class="button">Guarda il progetto</a>
           <a :href="card.linkGit" class="button">GitHub</a>
         </div>
       </div>
@@ -80,12 +80,18 @@ export default {
           </div>
           <div class="contDescription">
             <h3 class="importantText">Tecnologie utilizzate</h3>
-            <span
-              class="teck"
-              v-for="(teck, index) in card.tecnologie"
-              :key="index"
-              >{{ teck }}</span
-            >
+            <div class="d-flex flex-wrap">
+              <span
+                class="teck"
+                v-for="(teck, index) in card.tecnologie"
+                :key="index"
+                >{{ teck }}</span
+              >
+            </div>
+          </div>
+          <div class="d-flex gap-2 justify-content-center">
+            <a :href="card.link" class="button tablet">Guarda il progetto</a>
+            <a :href="card.linkGit" class="button tablet">GitHub</a>
           </div>
         </div>
       </div>
@@ -137,6 +143,14 @@ export default {
   margin-top: 2rem;
   border-radius: 50%;
   border: 1px solid $colorSite;
+}
+.button.tablet {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .button.tablet {
+    display: inline-block;
+  }
 }
 // .pin-spacer {
 //   width: calc((100% / 12) * 4);

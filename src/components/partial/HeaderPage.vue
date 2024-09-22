@@ -1,4 +1,5 @@
 <script>
+import { data } from "../../data";
 import { router } from "../../router";
 export default {
   name: "HeaderPage",
@@ -23,6 +24,7 @@ export default {
   <header>
     <div class="container">
       <div class="row align-items-center">
+        <!-- logo -->
         <div class="col">
           <router-link :to="{ name: 'Home' }">
             <div class="contImg">
@@ -30,6 +32,7 @@ export default {
             </div>
           </router-link>
         </div>
+        <!-- menu computer e tablet -->
         <div class="col-auto">
           <nav class="d-flex justify-content-center gap-2 menuLaptop">
             <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
@@ -43,33 +46,26 @@ export default {
               >Contact</router-link
             >
           </nav>
+          <!-- vecchio posto del menu responsive -->
+          <!-- menu responsive -->
+          <!-- menu ad hamburger -->
           <div class="contNav" @click="openMenu()">
             <div class="menu"></div>
             <div class="menu"></div>
             <div class="menu"></div>
-            <nav class="secondMenu" :class="{ active: activeMenu }">
-              <router-link class="link" :to="{ name: 'Home' }"
-                >Home</router-link
-              >
-              <router-link class="link" :to="{ name: 'Selfsummary' }"
-                >About</router-link
-              >
-              <router-link class="link" :to="{ name: 'Project' }"
-                >Project</router-link
-              >
-              <router-link class="link" :to="{ name: 'Contact' }"
-                >Contact</router-link
-              >
-              <div class="contNav" @click.stop="openMenu()">
-                <div class="menu"></div>
-                <div class="menu"></div>
-                <div class="menu"></div>
-              </div>
-            </nav>
           </div>
         </div>
       </div>
     </div>
+    <!-- tendina che si apre -->
+    <nav class="secondMenu" :class="{ active: activeMenu }" @click="openMenu()">
+      <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
+      <router-link class="link" :to="{ name: 'Selfsummary' }"
+        >About</router-link
+      >
+      <router-link class="link" :to="{ name: 'Project' }">Project</router-link>
+      <router-link class="link" :to="{ name: 'Contact' }">Contact</router-link>
+    </nav>
   </header>
 </template>
 <style lang='scss' scoped>
@@ -80,16 +76,24 @@ export default {
     height: 100%;
   }
 }
+
 .contNav,
 .secondMenu {
   display: none;
 }
+.contNav {
+  #iconClass {
+    color: white;
+    font-size: 2rem;
+  }
+}
 @media all and (max-width: 460px) {
   .menuLaptop {
-    display: none !important;
+    display: none;
   }
   .contNav {
     display: block;
+
     cursor: pointer;
 
     .menu {
@@ -100,6 +104,7 @@ export default {
     }
   }
 }
+// secondo menu responsive a tendina
 .secondMenu.active {
   position: absolute;
   top: 0;
@@ -113,10 +118,12 @@ export default {
   padding: 2rem;
   gap: 2rem;
   text-align: center;
-  z-index: 10;
-  background-color: rgba($color: #2c2b30, $alpha: 0.9);
+  z-index: 100;
+  background-color: rgba($color: #2c2b30, $alpha: 1);
+
   .link {
     width: 100%;
+    color: white;
   }
   .contNav {
     position: absolute;

@@ -103,18 +103,22 @@ export default {
             <p>+39 3400009656</p>
           </div>
           <div class="contInfo">
-            <p class="lessImportant">Linkedin</p>
+            <p class="lessImportant upButton">Linkedin</p>
 
             <a
               target="_blank"
               href="https://www.linkedin.com/in/tommasogalistu/"
+              class="button"
               >Profilo Linkedin</a
             >
           </div>
           <div class="contInfo">
-            <p class="lessImportant">GitHub</p>
+            <p class="lessImportant upButton">GitHub</p>
 
-            <a target="_blank" href="https://github.com/TommasoGalistu"
+            <a
+              target="_blank"
+              href="https://github.com/TommasoGalistu"
+              class="button"
               >Profilo GitHub</a
             >
           </div>
@@ -230,10 +234,17 @@ h2 {
   font-size: 3rem;
   margin-bottom: 3rem;
 }
-
+.upButton {
+  margin: 1rem 0;
+}
 @media screen and (max-width: 767px) {
   .contenitoreFlex {
     flex-direction: column-reverse;
+    gap: 2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .contenitoreFlex {
     gap: 2rem;
   }
 }
