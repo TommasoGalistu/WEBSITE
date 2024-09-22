@@ -27,7 +27,8 @@ export const data = reactive({
       titolo: "Chat Clone",
       photo: "/Pj2.png",
       photoDescription: "photo of chat clone",
-      teamOrg: "",
+      teamOrg:
+        "Questo progetto è stato eseguito interamente da solo. Mi sono occupato della progettazione, dello sviluppo e della risoluzione dei problemi relativi alla gestione delle chat e delle interazioni utente. L'assenza di dati persistenti ha reso il lavoro un'interessante sfida di simulazione di interazioni reali.",
       descrizione:
         "Un progetto personale riguardante alcune famose funzionalità di WhatsApp. La chat è stata creata con le Composition API di Vue. Nel progetto ho riprodotto il layout di WhatsApp con l'interfaccia utente e tutte le chat cliccabili. I dati non sono persistenti e le risposte automatiche sono casuali. È possibile personalizzare i colori della chat, cliccare le chat, eliminare i messaggi e scrivere nella chat che, in maniera simulata, risponde con testi casuali.",
       solution:
@@ -43,7 +44,8 @@ export const data = reactive({
       titolo: "Netflix",
       photo: "/Pj3.png",
       photoDescription: "photo of netflix clone",
-      teamOrg: "",
+      teamOrg:
+        "Ho realizzato questo progetto individualmente, occupandomi dell'integrazione dell'API per il recupero dei dati sui film e della gestione della UI. La sfida principale è stata gestire le risposte incomplete dell'API in modo da garantire un'esperienza utente coerente.",
       descrizione:
         "Un progetto personale che utilizza una famosa API per ottenere dati sui film. Il progetto riproduce la funzionalità di ricerca dei film. Le card riprodotte dopo la richiesta sono interattive e mostrano, nella parte frontale, la copertina e il nome del film. Nel retro della card ci sono informazioni aggiuntive come la descrizione del film, la nazionalità (con bandiera) e il rating, se disponibile.",
       solution:
@@ -59,7 +61,8 @@ export const data = reactive({
       titolo: "Slider",
       photo: "/Pj4.png",
       photoDescription: "photo of slider superhero",
-      teamOrg: "",
+      teamOrg:
+        "Ho sviluppato questo progetto da solo, occupandomi della creazione dello slider e della gestione delle interazioni utente. L'obiettivo principale era rendere fluide le transizioni e garantire un'esperienza interattiva senza interruzioni.",
       descrizione:
         "Un progetto personale di uno slider interattivo. Lo slider parte con una rotazione automatica delle foto, che si interrompe quando l'utente passa il mouse sopra lo slider o interagisce con i pulsanti. I pulsanti sulla destra permettono all'utente di avanzare, tornare indietro o invertire la direzione dell'animazione.",
       solution:
@@ -75,7 +78,8 @@ export const data = reactive({
       titolo: "Dashboard",
       photo: "/Pj5.png",
       photoDescription: "photo of dashboard",
-      teamOrg: "",
+      teamOrg:
+        "Questo progetto è stato sviluppato da solo con l'obiettivo di creare una dashboard responsive utilizzando Bootstrap. Mi sono occupato di tutta la progettazione e sviluppo, concentrandomi sulla disposizione dei componenti e sulla reattività.",
       descrizione:
         "Un progetto personale che riproduce una dashboard semplice e reattiva. La pagina simula una dashboard aziendale che gestisce varie classi e funzionalità. La dashboard è stata creata con il framework Bootstrap, che semplifica la reattività e riduce la complessità del codice.",
       solution:
@@ -91,7 +95,8 @@ export const data = reactive({
       titolo: "Spotify Web",
       photo: "/Pj6.png",
       photoDescription: "photo of spotify",
-      teamOrg: "",
+      teamOrg:
+        "Questo progetto è stato interamente realizzato da solo come primo approccio allo sviluppo front-end. Mi sono occupato della creazione del layout responsive, cercando di riprodurre l'interfaccia complessa di Spotify.",
       descrizione:
         "Uno dei miei primi progetti personali che riproduce solamente il layout di Spotify. Il progetto è responsive e riproduce l'interfaccia utente con tutte le funzionalità per usare la WebApp.",
       solution:

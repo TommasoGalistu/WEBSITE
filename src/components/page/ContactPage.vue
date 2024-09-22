@@ -16,11 +16,13 @@ export default {
       emailError: false,
       subjectLength: false,
       messageLength: false,
+      checkedPrivacy: true,
     };
   },
   methods: {
     sendEmail() {
       let isValidate = this.checkValidate();
+
       if (isValidate) {
         const serviceID = "service_3gm2suh"; // Sostituisci con il tuo Service ID da EmailJS
         const templateID = "template_pjqfm3p"; // Sostituisci con il tuo Template ID
@@ -63,31 +65,34 @@ export default {
       this.subjectLength = this.form.subject.trim().length < 3;
 
       this.messageLength = this.form.message.trim().length < 15;
-
+      // controllo la privacy
+      const form = document.forms["myForm"];
+      let formElement = form.elements;
+      this.checkedPrivacy = formElement[4].checked;
       // se è false ci sono problemi se è true non ci sono problemi
       let errorGeneral =
         !this.nameLength &&
         !this.emailError &&
         !this.subjectLength &&
-        !this.messageLength;
-
+        !this.messageLength &&
+        this.checkedPrivacy;
       return errorGeneral;
     },
-    resetForm() {
-      this.form = {
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      };
-    },
+    // resetForm() {
+    //   this.form = {
+    //     name: "",
+    //     email: "",
+    //     subject: "",
+    //     message: "",
+    //   };
+    // },
   },
 };
 </script>
 <template>
   <div class="container">
     <div class="row contenitoreFlex">
-      <div class="col-lg-4 col-md-5 col-sm-12">
+      <div class="col-md-5">
         <div class="tcard">
           <div class="contInfo">
             <p class="lessImportant">E-MAIL</p>
@@ -100,22 +105,30 @@ export default {
           <div class="contInfo">
             <p class="lessImportant">Linkedin</p>
 
-            <a href="https://www.linkedin.com/in/tommasogalistu/"
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/tommasogalistu/"
               >Profilo Linkedin</a
             >
           </div>
           <div class="contInfo">
             <p class="lessImportant">GitHub</p>
 
-            <a href="https://github.com/TommasoGalistu">Profilo GitHub</a>
+            <a target="_blank" href="https://github.com/TommasoGalistu"
+              >Profilo GitHub</a
+            >
           </div>
         </div>
       </div>
-      <div class="col-lg-8 col-md-7 col-sm-12">
+      <div class="col-md-7">
         <div class="tcard text-center formContainer">
           <span class="importantText"> Contattami</span>
 
-          <form @submit.prevent="sendEmail" class="form-control p-4">
+          <form
+            @submit.prevent="sendEmail"
+            class="form-control p-4"
+            id="myForm"
+          >
             <div class="mb-3">
               <label for="name" class="form-label">Nome:</label>
               <input
@@ -126,7 +139,9 @@ export default {
                 placeholder="Scrivi il tuo nome"
                 required
               />
-              <small v-if="nameLength">Inserisci un nome valido</small>
+              <small v-if="nameLength"
+                >Inserisci un nome valido di almeno 3 caratteri</small
+              >
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Email:</label>
@@ -151,7 +166,8 @@ export default {
                 required
               />
               <small v-if="subjectLength"
-                >L'oggetto deve essere maggiore di 3 lettere</small
+                >L'oggetto di questo messaggio deve essere maggiore di 3
+                lettere</small
               >
             </div>
             <div class="mb-3">
@@ -164,10 +180,30 @@ export default {
                 placeholder="Scrivi il tuo messaggio"
                 required
               ></textarea>
-              <small v-if="messageLength"
-                >Il messaggio deve essere più lungo di 15 lettere</small
+              <small class="text-start" v-if="messageLength"
+                >Il messaggio deve essere più lungo di 15 caratteri</small
               >
             </div>
+            <div class="input-group-text d-flex gap-2">
+              <input
+                class="form-check-input mt-0"
+                type="checkbox"
+                value="Policy Privacy"
+                aria-label="Checkbox for following text input"
+              />
+              <a
+                href="https://www.freeprivacypolicy.com/live/51021a08-f94a-4620-a11a-5a8ad88cb936"
+                target="_blank"
+                >Trattamento ai dati personali</a
+              >
+            </div>
+            <div class="text-start">
+              <small v-if="!checkedPrivacy"
+                >Leggere e sottoscrivere il trattamento dei dati
+                personali</small
+              >
+            </div>
+
             <button type="submit" class="btn btn-primary">Invia</button>
           </form>
         </div>
@@ -180,7 +216,12 @@ export default {
 .contInfo {
   margin-bottom: 3rem;
 }
-
+form {
+  text-align: left;
+}
+button {
+  margin-top: 2rem;
+}
 h2 {
   display: inline-block;
 }

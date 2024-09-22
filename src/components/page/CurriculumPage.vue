@@ -45,7 +45,7 @@ export default {
             <img src="/src/assets/profilo.png" alt="foto profilo tommy" />
           </div>
           <h3 class="mt-1">Tommaso Galistu</h3>
-          <p class="lessImportant">Junior Full Stack Developer</p>
+          <p class="lessImportant">Jr. Full Stack Developer</p>
           <router-link class="link" :to="{ name: 'Contact' }"
             >Contattami</router-link
           >

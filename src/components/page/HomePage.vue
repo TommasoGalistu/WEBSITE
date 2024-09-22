@@ -46,7 +46,8 @@ export default {
               :to="{ name: 'ProjectOne', params: { id: 0 } }"
             >
               <div class="tcard banner">
-                <p>Ultimo progetto online</p>
+                <span>Ultimo progetto</span>
+                <span class="textRilevant">ONLINE</span>
               </div>
             </router-link>
           </div>
@@ -148,6 +149,20 @@ h1 {
   display: flex;
   align-items: center;
   gap: 2rem;
+}
+.tcard.banner {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem;
+  span {
+    font-size: 1.5rem;
+  }
+  span.textRilevant {
+    color: $colorTextRilevant;
+    font-size: 2rem;
+  }
 }
 // .banner {
 //   position: relative;

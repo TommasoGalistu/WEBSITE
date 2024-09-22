@@ -17,10 +17,12 @@ body {
 //   // width: 5rem;
 //   border: 1px solid white;
 // }
-.link {
+.link,
+a {
   text-decoration: none;
   color: $colorSite;
 }
+
 nav {
   .link {
     padding: 0.5rem 1rem;
@@ -75,5 +77,20 @@ p {
   align-self: flex-end;
   img {
     height: 100%;
+  }
+}
+
+small {
+  color: red;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  color: $colorTextButton;
+  background-color: $colorButton;
+  border-radius: 20px;
+  &:hover {
+    background-color: $colorButtonHover;
+    transition: background-color 0.2s ease-in-out;
   }
 }
