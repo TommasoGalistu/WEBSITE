@@ -12,9 +12,13 @@ export default {
   methods: {
     openMenu() {
       if (this.activeMenu) {
+        // menu responsive chiuso
         this.activeMenu = false;
+        document.body.style.overflow = "";
       } else {
+        // menu responsive aperto
         this.activeMenu = true;
+        document.body.style.overflow = "hidden";
       }
     },
   },
@@ -34,20 +38,22 @@ export default {
         </div>
         <!-- menu computer e tablet -->
         <div class="col-auto">
-          <nav class="d-flex justify-content-center gap-2 menuLaptop">
-            <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
-            <router-link class="link" :to="{ name: 'Selfsummary' }"
-              >About</router-link
-            >
-            <router-link class="link" :to="{ name: 'Project' }"
-              >Project</router-link
-            >
-            <router-link class="link" :to="{ name: 'Contact' }"
-              >Contact</router-link
-            >
+          <nav class="d-flex justify-content-center gap-2">
+            <div class="contMenuLaptop">
+              <router-link class="link" :to="{ name: 'Home' }"
+                >Home</router-link
+              >
+              <router-link class="link" :to="{ name: 'Selfsummary' }"
+                >About</router-link
+              >
+              <router-link class="link" :to="{ name: 'Project' }"
+                >Project</router-link
+              >
+              <router-link class="link" :to="{ name: 'Contact' }"
+                >Contact</router-link
+              >
+            </div>
           </nav>
-          <!-- vecchio posto del menu responsive -->
-          <!-- menu responsive -->
           <!-- menu ad hamburger -->
           <div class="contNav" @click="openMenu()">
             <div class="menu"></div>
@@ -87,8 +93,9 @@ export default {
     font-size: 2rem;
   }
 }
+
 @media all and (max-width: 460px) {
-  .menuLaptop {
+  .contMenuLaptop {
     display: none;
   }
   .contNav {
@@ -106,6 +113,7 @@ export default {
 }
 // secondo menu responsive a tendina
 .secondMenu.active {
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
@@ -120,6 +128,7 @@ export default {
   text-align: center;
   z-index: 100;
   background-color: rgba($color: #2c2b30, $alpha: 1);
+  overflow: hidden;
 
   .link {
     width: 100%;
