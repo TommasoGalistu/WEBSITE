@@ -157,7 +157,7 @@ h1 {
     font-size: 1.5rem;
   }
   span.textRilevant {
-    color: $colorTextRilevant;
+    color: $colorTextLinkActive;
     font-size: 2rem;
   }
 }

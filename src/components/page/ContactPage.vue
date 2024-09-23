@@ -35,18 +35,15 @@ export default {
           message: this.form.message,
         };
 
-        // emailjs
-        //   .send(serviceID, templateID, templateParams, userID)
-        //   .then(() => {
-        //     this.emailSent = true;
-        //     this.resetForm();
-        //   })
-        //   .catch((error) => {
-        //     console.error("Errore nell'invio dell'email: ", error);
-        //   });
-        console.log("inviato");
-      } else {
-        console.log("NON inviato");
+        emailjs
+          .send(serviceID, templateID, templateParams, userID)
+          .then(() => {
+            this.emailSent = true;
+            this.resetForm();
+          })
+          .catch((error) => {
+            console.error("Errore nell'invio dell'email: ", error);
+          });
       }
     },
     checkValidate() {
@@ -78,14 +75,14 @@ export default {
         this.checkedPrivacy;
       return errorGeneral;
     },
-    // resetForm() {
-    //   this.form = {
-    //     name: "",
-    //     email: "",
-    //     subject: "",
-    //     message: "",
-    //   };
-    // },
+    resetForm() {
+      this.form = {
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      };
+    },
   },
 };
 </script>
