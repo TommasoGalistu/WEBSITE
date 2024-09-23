@@ -106,10 +106,21 @@ export default {
   }
 }
 
-.contNav,
-.secondMenu {
-  display: none;
+.contNav {
+  // display: none;
+  z-index: 101;
 }
+.secondMenu {
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: height 0.2s ease-out;
+  .link {
+    display: none;
+  }
+}
+
 .contNav {
   #iconClass {
     color: white;
@@ -128,25 +139,21 @@ export default {
     display: none;
   }
   .contNav {
-    display: block;
-
     cursor: pointer;
+    z-index: 101;
 
     .menu {
       height: 2px;
       width: 2rem;
       background-color: $colorSite;
       margin: 0.5rem 0;
+      z-index: 101;
     }
   }
 }
 // secondo menu responsive a tendina
 .secondMenu.active {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
+  height: 23rem;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -155,14 +162,16 @@ export default {
   padding: 2rem;
   gap: 2rem;
   text-align: center;
-  z-index: 100;
-  background-color: rgba($color: #2c2b30, $alpha: 1);
+  z-index: 50;
+  background-color: rgba($color: white, $alpha: 1);
   overflow: hidden;
+  transition: height 0.2s ease-out;
 
   .link {
+    display: block;
     width: 100%;
-    color: white;
-    font-size: 2rem;
+    color: black;
+    font-size: 1.3rem;
   }
   .contNav {
     position: absolute;
