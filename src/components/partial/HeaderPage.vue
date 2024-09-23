@@ -7,6 +7,7 @@ export default {
     return {
       routes: router.options.routes,
       activeMenu: false,
+      clickedMenu: "Home",
     };
   },
   methods: {
@@ -20,6 +21,13 @@ export default {
         this.activeMenu = true;
         document.body.style.overflow = "hidden";
       }
+    },
+  },
+  watch: {
+    $route(to, from) {
+      this.clickedMenu = to.name;
+      console.log(`${to.name}`);
+      // Puoi anche eseguire altre azioni come aggiornare lo stato locale
     },
   },
 };
@@ -40,16 +48,31 @@ export default {
         <div class="col-auto">
           <nav class="d-flex justify-content-center gap-2">
             <div class="contMenuLaptop">
-              <router-link class="link" :to="{ name: 'Home' }"
+              <router-link
+                class="link"
+                :class="{ active: clickedMenu === 'Home' }"
+                :to="{ name: 'Home' }"
                 >Home</router-link
               >
-              <router-link class="link" :to="{ name: 'Selfsummary' }"
+              <router-link
+                class="link"
+                :class="{ active: clickedMenu === 'Selfsummary' }"
+                :to="{ name: 'Selfsummary' }"
                 >About</router-link
               >
-              <router-link class="link" :to="{ name: 'Project' }"
+              <router-link
+                class="link"
+                :class="{
+                  active:
+                    clickedMenu === 'Project' || clickedMenu === 'ProjectOne',
+                }"
+                :to="{ name: 'Project' }"
                 >Project</router-link
               >
-              <router-link class="link" :to="{ name: 'Contact' }"
+              <router-link
+                class="link"
+                :class="{ active: clickedMenu === 'Contact' }"
+                :to="{ name: 'Contact' }"
                 >Contact</router-link
               >
             </div>
@@ -93,7 +116,13 @@ export default {
     font-size: 2rem;
   }
 }
-
+.contMenuLaptop {
+  .link.active {
+    font-size: 1.3rem;
+    color: $colorTextLinkActive;
+    text-decoration: underline;
+  }
+}
 @media all and (max-width: 460px) {
   .contMenuLaptop {
     display: none;
@@ -104,7 +133,7 @@ export default {
     cursor: pointer;
 
     .menu {
-      height: 1px;
+      height: 2px;
       width: 2rem;
       background-color: $colorSite;
       margin: 0.5rem 0;
@@ -133,6 +162,7 @@ export default {
   .link {
     width: 100%;
     color: white;
+    font-size: 2rem;
   }
   .contNav {
     position: absolute;
