@@ -1,6 +1,53 @@
 <script>
+import { useHead } from "@vueuse/head";
 export default {
   name: "HomePage",
+  setup() {
+    useHead({
+      title: "Programmatore Full Stack | Home",
+      meta: [
+        {
+          name: "description",
+          content:
+            "Tommaso Galistu, Full Stack Developer specializzato in Javascript, Vue, PHP e Laravel.",
+        },
+        {
+          name: "robots",
+          content: "index, follow",
+        },
+        {
+          property: "og:title",
+          content: "Programmatore Full Stack | Home",
+        },
+        {
+          property: "og:description",
+          content:
+            "Tommaso Galistu, Full Stack Developer a Roma, esperto in Javascript, Vue e Laravel.",
+        },
+        {
+          property: "og:image",
+          content: "https://tommasogalistu.com/profilo.png",
+        },
+        {
+          name: "twitter:card",
+          content: "summary_large_image",
+        },
+        {
+          name: "twitter:title",
+          content: "Programmatore Full Stack | Home",
+        },
+        {
+          name: "twitter:description",
+          content:
+            "Tommaso Galistu, sviluppatore web full stack esperto in Vue e PHP.",
+        },
+        {
+          property: "og:url",
+          content: "https://tommasogalistu.com/",
+        },
+      ],
+    });
+  },
   data() {
     return {};
   },

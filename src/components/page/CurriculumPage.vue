@@ -1,6 +1,53 @@
 <script>
+import { useHead } from "@vueuse/head";
 export default {
   name: "CurriculumPage",
+  setup() {
+    useHead({
+      title: "Curriculum Sviluppatore Web Full Stack",
+      meta: [
+        {
+          name: "description",
+          content:
+            "Curriculum di Tommaso Galistu, Full Stack Developer con esperienza in Javascript, Vue, PHP e Laravel.",
+        },
+        {
+          property: "og:url",
+          content: "https://tommasogalistu.com/",
+        },
+        {
+          name: "robots",
+          content: "index, follow",
+        },
+        {
+          property: "og:title",
+          content: "Curriculum Sviluppatore Web Full Stack",
+        },
+        {
+          property: "og:description",
+          content:
+            "Scopri il curriculum di Tommaso Galistu, sviluppatore full stack con esperienza in front-end e back-end.",
+        },
+        {
+          property: "og:image",
+          content: "https://tommasogalistu.com/profilo.png",
+        },
+        {
+          name: "twitter:card",
+          content: "summary_large_image",
+        },
+        {
+          name: "twitter:title",
+          content: "Curriculum Sviluppatore Web Full Stack",
+        },
+        {
+          name: "twitter:description",
+          content:
+            "Visualizza il curriculum di Tommaso Galistu, sviluppatore web full stack.",
+        },
+      ],
+    });
+  },
   data() {
     return {
       stopSticky: false,

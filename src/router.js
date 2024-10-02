@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 import HomePage from "./components/page/HomePage.vue";
-import AboutPage from "./components/page/AboutPage.vue";
 import SelfSummary from "./components/page/SelfSummary.vue";
 import CurriculumPage from "./components/page/CurriculumPage.vue";
 import ProjectPage from "./components/page/ProjectPage.vue";
@@ -12,17 +11,12 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: "",
+      path: "/",
       name: "Home",
       component: HomePage,
     },
     {
-      path: "/about",
-      name: "About",
-      component: AboutPage,
-    },
-    {
-      path: "/self-summary",
+      path: "/la-mia-storia",
       name: "Selfsummary",
       component: SelfSummary,
     },
@@ -32,48 +26,17 @@ const router = createRouter({
       component: CurriculumPage,
     },
     {
-      path: "/project",
+      path: "/progetti",
       name: "Project",
-      children: [
-        {
-          path: "/project",
-          name: "Project",
-          component: ProjectPage,
-        },
-        {
-          path: ":id",
-          name: "ProjectOne",
-          component: ProjectOne,
-        },
-        {
-          path: ":id",
-          name: "ProjectOne",
-          component: ProjectOne,
-        },
-        {
-          path: ":id",
-          name: "ProjectOne",
-          component: ProjectOne,
-        },
-        {
-          path: ":id",
-          name: "ProjectOne",
-          component: ProjectOne,
-        },
-        {
-          path: ":id",
-          name: "ProjectOne",
-          component: ProjectOne,
-        },
-        {
-          path: ":id",
-          name: "ProjectOne",
-          component: ProjectOne,
-        },
-      ],
+      component: ProjectPage,
     },
     {
-      path: "/contact",
+      path: "/progetti/:id",
+      name: "ProjectOne",
+      component: ProjectOne,
+    },
+    {
+      path: "/contatti",
       name: "Contact",
       component: ContactPage,
     },
@@ -91,4 +54,5 @@ const router = createRouter({
     }
   },
 });
+
 export { router };

@@ -1,7 +1,53 @@
 <script>
+import { useHead } from "@vueuse/head";
 import { data } from "../../data.js";
 export default {
   name: "ProjectPage",
+  setup() {
+    useHead({
+      title: "Progetti Full Stack, Javascript, Vue e PHP",
+      meta: [
+        {
+          name: "description",
+          content:
+            "Elenco dei progetti sviluppati da Tommaso Galistu, Full Stack Developer specializzato in Javascript, Vue e PHP.",
+        },
+        {
+          property: "og:url",
+          content: "https://tommasogalistu.com/",
+        },
+        {
+          name: "robots",
+          content: "index, follow",
+        },
+        {
+          property: "og:title",
+          content: "Progetti Full Stack, Javascript, Vue e PHP",
+        },
+        {
+          property: "og:description",
+          content:
+            "Scopri i progetti full stack di Tommaso Galistu sviluppati con Javascript, Vue e PHP.",
+        },
+        {
+          property: "og:image",
+          content: "https://tommasogalistu.com/profilo.png",
+        },
+        {
+          name: "twitter:card",
+          content: "summary_large_image",
+        },
+        {
+          name: "twitter:title",
+          content: "Progetti Full Stack, Javascript, Vue e PHP",
+        },
+        {
+          name: "twitter:description",
+          content: "Visualizza i progetti full stack di Tommaso Galistu.",
+        },
+      ],
+    });
+  },
   data() {
     return {
       cards: data.cardProject,

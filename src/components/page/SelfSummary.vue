@@ -1,6 +1,53 @@
 <script>
+import { useHead } from "@vueuse/head";
 export default {
   name: "SelfSummary",
+  setup() {
+    useHead({
+      title: "Curriculum Full Stack Developer - Front-end e Back-end",
+      meta: [
+        {
+          name: "description",
+          content:
+            "Profilo professionale di Tommaso Galistu, Full Stack Developer con esperienza in front-end e back-end.",
+        },
+        {
+          property: "og:url",
+          content: "https://tommasogalistu.com/",
+        },
+        {
+          name: "robots",
+          content: "index, follow",
+        },
+        {
+          property: "og:title",
+          content: "Curriculum Full Stack Developer - Front-end e Back-end",
+        },
+        {
+          property: "og:description",
+          content:
+            "Scopri il profilo di Tommaso Galistu, sviluppatore Full Stack con competenze in front-end e back-end.",
+        },
+        {
+          property: "og:image",
+          content: "https://tommasogalistu.com/profilo.png",
+        },
+        {
+          name: "twitter:card",
+          content: "summary_large_image",
+        },
+        {
+          name: "twitter:title",
+          content: "Curriculum Full Stack Developer - Front-end e Back-end",
+        },
+        {
+          name: "twitter:description",
+          content:
+            "Visualizza il curriculum di Tommaso Galistu, sviluppatore front-end e back-end.",
+        },
+      ],
+    });
+  },
   data() {
     return {};
   },

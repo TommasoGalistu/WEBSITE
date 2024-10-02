@@ -1,7 +1,54 @@
 <script>
+import { useHead } from "@vueuse/head";
 import emailjs from "emailjs-com";
 export default {
   name: "ContactPage",
+  setup() {
+    useHead({
+      title: "Contatta Tommaso Galistu - Full Stack Developer",
+      meta: [
+        {
+          name: "description",
+          content:
+            "Contatta Tommaso Galistu, Full Stack Developer, per informazioni su progetti di sviluppo web.",
+        },
+        {
+          property: "og:url",
+          content: "https://tommasogalistu.com/",
+        },
+        {
+          name: "robots",
+          content: "index, follow",
+        },
+        {
+          property: "og:title",
+          content: "Contatta Tommaso Galistu - Full Stack Developer",
+        },
+        {
+          property: "og:description",
+          content:
+            "Contattaci per collaborare con Tommaso Galistu, esperto sviluppatore Full Stack.",
+        },
+        {
+          property: "og:image",
+          content: "https://tommasogalistu.com/profilo.png",
+        },
+        {
+          name: "twitter:card",
+          content: "summary_large_image",
+        },
+        {
+          name: "twitter:title",
+          content: "Contatta Tommaso Galistu - Full Stack Developer",
+        },
+        {
+          name: "twitter:description",
+          content:
+            "Manda un messaggio a Tommaso Galistu per consulenze o progetti web.",
+        },
+      ],
+    });
+  },
   data() {
     return {
       form: {

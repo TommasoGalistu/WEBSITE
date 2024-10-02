@@ -1,8 +1,55 @@
 <script>
+import { useHead } from "@vueuse/head";
 import { data } from "../../data";
 import ScrollMagic from "scrollmagic";
 export default {
   name: "ProjectOne",
+  setup() {
+    useHead({
+      title: "Progetti Full Stack - Javascript, Vue, PHP, Laravel",
+      meta: [
+        {
+          name: "description",
+          content:
+            "Dettagli sui progetti sviluppati da Tommaso Galistu, Full Stack Developer con competenze in Javascript, Vue, PHP e Laravel.",
+        },
+        {
+          property: "og:url",
+          content: "https://tommasogalistu.com/",
+        },
+        {
+          name: "robots",
+          content: "index, follow",
+        },
+        {
+          property: "og:title",
+          content: "Progetti Full Stack - Javascript, Vue, PHP, Laravel",
+        },
+        {
+          property: "og:description",
+          content:
+            "Scopri i progetti di Tommaso Galistu sviluppati con tecnologie moderne come Vue, PHP e Laravel.",
+        },
+        {
+          property: "og:image",
+          content: "https://tommasogalistu.com/profilo.png",
+        },
+        {
+          name: "twitter:card",
+          content: "summary_large_image",
+        },
+        {
+          name: "twitter:title",
+          content: "Progetti Full Stack - Javascript, Vue, PHP, Laravel",
+        },
+        {
+          name: "twitter:description",
+          content:
+            "Dettagli sui progetti full stack realizzati da Tommaso Galistu.",
+        },
+      ],
+    });
+  },
   data() {
     return {
       projectId: null,
@@ -17,6 +64,7 @@ export default {
   created() {
     // this.projectId = this.$route.params.id;
     this.card = data.cardProject[this.$route.params.id];
+    console.log(this.card);
   },
   mounted() {
     // Crea un nuovo controller ScrollMagic
