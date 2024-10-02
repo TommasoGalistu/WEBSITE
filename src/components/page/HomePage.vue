@@ -77,10 +77,10 @@ export default {
               </div>
             </div>
             <div class="contImgSvg visible">
-              <img src="/src/assets/arrow.svg" alt="arrow photo" />
+              <img src="/src/assets/arrow.svg" alt="" />
             </div>
             <div class="contImgSvg hoverEffect">
-              <img src="/src/assets/arrowHover.svg" alt="arrow photo" />
+              <img src="/src/assets/arrowHover.svg" alt="" />
             </div>
           </div>
         </router-link>
