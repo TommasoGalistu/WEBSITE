@@ -64,7 +64,6 @@ export default {
   created() {
     // this.projectId = this.$route.params.id;
     this.card = data.cardProject[this.$route.params.id];
-    console.log(this.card);
   },
   mounted() {
     // Crea un nuovo controller ScrollMagic

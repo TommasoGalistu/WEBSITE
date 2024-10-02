@@ -26,7 +26,7 @@ export default {
   watch: {
     $route(to, from) {
       this.clickedMenu = to.name;
-      console.log(`${to.name}`);
+
       // Puoi anche eseguire altre azioni come aggiornare lo stato locale
     },
   },

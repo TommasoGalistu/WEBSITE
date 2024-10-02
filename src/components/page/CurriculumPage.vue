@@ -60,7 +60,6 @@ export default {
       let container = this.$refs.container;
       // Ottieni l'altezza del contenitore
       const containerBottom = container.getBoundingClientRect().bottom;
-      console.log(containerBottom);
 
       const stickyHeight = stickyElement.offsetHeight;
       const windowHeight = window.innerHeight;
