@@ -64,6 +64,7 @@ export default {
       subjectLength: false,
       messageLength: false,
       checkedPrivacy: true,
+      sendMessage: false,
     };
   },
   methods: {
@@ -87,9 +88,12 @@ export default {
           .then(() => {
             this.emailSent = true;
             this.resetForm();
+            this.sendMessage = true;
           })
           .catch((error) => {
-            console.error("Errore nell'invio dell'email: ", error);
+            this.emailSent = false;
+
+            this.sendMessage = false;
           });
       }
     },
@@ -187,9 +191,9 @@ export default {
                 placeholder="Scrivi il tuo nome"
                 required
               />
-              <small v-if="nameLength"
-                >Inserisci un nome valido di almeno 3 caratteri</small
-              >
+              <div class="alert alert-danger" v-if="nameLength">
+                <small>Inserisci un nome valido di almeno 3 caratteri</small>
+              </div>
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Email:</label>
@@ -201,7 +205,9 @@ export default {
                 placeholder="Scrivi la tua email"
                 required
               />
-              <small v-if="emailError">Scrivi una email valida</small>
+              <div class="alert alert-danger" v-if="emailError">
+                <small>Scrivi una email valida</small>
+              </div>
             </div>
             <div class="mb-3">
               <label for="subject" class="form-label">Oggetto:</label>
@@ -213,10 +219,12 @@ export default {
                 placeholder="Scrivi l'oggetto"
                 required
               />
-              <small v-if="subjectLength"
-                >L'oggetto di questo messaggio deve essere maggiore di 3
-                lettere</small
-              >
+              <div class="alert alert-danger" v-if="subjectLength">
+                <small
+                  >L'oggetto di questo messaggio deve essere maggiore di 3
+                  lettere</small
+                >
+              </div>
             </div>
             <div class="mb-3">
               <label for="message" class="form-label">Messaggio:</label>
@@ -228,9 +236,11 @@ export default {
                 placeholder="Scrivi il tuo messaggio"
                 required
               ></textarea>
-              <small class="text-start" v-if="messageLength"
-                >Il messaggio deve essere più lungo di 15 caratteri</small
-              >
+              <div class="alert alert-danger" v-if="messageLength">
+                <small
+                  >Il messaggio deve essere più lungo di 15 caratteri</small
+                >
+              </div>
             </div>
             <div class="input-group-text d-flex gap-2">
               <input
@@ -245,14 +255,23 @@ export default {
                 >Trattamento ai dati personali</a
               >
             </div>
-            <div class="text-start">
-              <small v-if="!checkedPrivacy"
+            <div class="alert alert-danger" v-if="!checkedPrivacy">
+              <small
                 >Leggere e sottoscrivere il trattamento dei dati
                 personali</small
               >
             </div>
 
-            <button type="submit" class="btn btn-primary">Invia</button>
+            <button type="submit" class="btn btn-primary mb-4">Invia</button>
+            <div class="alert alert-success" v-if="emailSent && sendMessage">
+              <small>La tua email è stata inviata con successo!!!!</small>
+            </div>
+            <div
+              class="alert alert-danger"
+              v-else-if="!emailSent && sendMessage"
+            >
+              <small>La tua email NON è stata inviata</small>
+            </div>
           </form>
         </div>
       </div>
