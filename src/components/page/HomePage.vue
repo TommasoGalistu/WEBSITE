@@ -70,7 +70,7 @@ export default {
               </div>
               <div class="contText">
                 <p class="moreImportant">FULL STACK DEVELOPER</p>
-                <h1>Tommaso Galistu.</h1>
+                <h1>Tommaso Galistu</h1>
                 <p class="lessImportant">
                   Sono un Full stack developer e vivo a Roma
                 </p>
