@@ -60,7 +60,24 @@ export default {
   //   props: {
   //     index: Number,
   //   },
-  methods: {},
+  methods: {
+    toggleFullscreen() {
+      var videoElement = document.getElementById("video");
+
+      if (videoElement.requestFullscreen) {
+        videoElement.requestFullscreen(); // Per browser moderni
+      } else if (videoElement.mozRequestFullScreen) {
+        // Firefox
+        videoElement.mozRequestFullScreen();
+      } else if (videoElement.webkitRequestFullscreen) {
+        // Chrome, Safari, Opera
+        videoElement.webkitRequestFullscreen();
+      } else if (videoElement.msRequestFullscreen) {
+        // IE/Edge
+        videoElement.msRequestFullscreen();
+      }
+    },
+  },
   created() {
     // this.projectId = this.$route.params.id;
     this.card = data.cardProject[this.$route.params.id];
@@ -87,6 +104,11 @@ export default {
     //   .addTo(controller);
     // window.addEventListener("scroll", this.changeSticky());
   },
+  computed: {
+    isPhoto() {
+      return this.card.photo.split(".")[1] === "png";
+    },
+  },
 };
 </script>
 <template>
@@ -97,7 +119,15 @@ export default {
           class="tcard d-flex flex-column justify-content-center align-items-center gap-3"
         >
           <div class="contImg">
-            <img :src="card.photo" :alt="`foto di ${card.titolo}`" />
+            <img
+              v-if="isPhoto"
+              :src="card.photo"
+              :alt="`foto di ${card.titolo}`"
+            />
+            <video v-else id="video" controls>
+              <source src="/BoolBnb.mp4" type="video/mp4" />
+              Il tuo browser non supporta il formato video.
+            </video>
           </div>
           <h3 class="mt-1">{{ card.titolo }}</h3>
           <p class="lessImportant">{{ card.tipo[0] }}</p>
@@ -148,6 +178,11 @@ export default {
 <style lang='scss' scoped>
 @import "../../style/_variable.scss";
 
+video {
+  width: 320px; /* Imposta una larghezza fissa per il video in piccolo */
+  height: 180px; /* Imposta una altezza fissa per il video in piccolo */
+  object-fit: cover; /* Assicura che il video mantenga la proporzione senza deformarsi */
+}
 @media screen and (max-width: 768px) {
   .foto {
     position: relative;

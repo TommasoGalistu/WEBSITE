@@ -55,25 +55,19 @@ export default {
   },
 
   methods: {},
-  computed: {
-    firstColumn() {
-      return this.cards.filter((card) => card.id <= 2);
-    },
-    secondColumn() {
-      return this.cards.filter((card) => card.id > 2 && card.id < 7);
-    },
-  },
 };
 </script>
 <template>
   <div class="container-fluid">
     <div class="container d-flex flex-column">
-      <h2 class="align-self-center secondTitle">PROJECT</h2>
-      <div class="row mb-4">
-        <div class="col-md-4 d-flex flex-column gap-4">
+      <h2 class="align-self-center">I miei progetti</h2>
+      <div class="row">
+        <div
+          class="col-lg-4 col-md-6 mb-4"
+          v-for="(card, index) in cards"
+          :key="index"
+        >
           <router-link
-            v-for="(card, index) in firstColumn"
-            :key="index"
             class="link"
             :to="{ name: 'ProjectOne', params: { id: card.id - 1 } }"
           >
@@ -101,44 +95,6 @@ export default {
               </div>
             </div>
           </router-link>
-        </div>
-
-        <div class="col-md-8 d-flex flex-column">
-          <h2 class="align-self-center firstTitle">PROJECT</h2>
-          <div class="row">
-            <div class="col-12 d-flex gap-4 flex-wrap secondColumn">
-              <router-link
-                v-for="(card, index) in secondColumn"
-                :key="index"
-                class="link"
-                :to="{ name: 'ProjectOne', params: { id: card.id - 1 } }"
-              >
-                <div class="tcard">
-                  <div class="contImg littleCard">
-                    <img :src="card.photo" :alt="`foto di ${card.titolo}`" />
-                  </div>
-                  <div class="d-flex justify-content-between">
-                    <div>
-                      <p
-                        class="lessImportant"
-                        v-for="(tipi, index) in card.tipo"
-                        :key="index"
-                      >
-                        {{ tipi }}
-                      </p>
-                      <h4 class="title">{{ card.titolo }}</h4>
-                    </div>
-                    <div class="contImgSvg visible">
-                      <img src="/src/assets/arrow.svg" alt="arrow photo" />
-                    </div>
-                    <div class="contImgSvg hoverEffect">
-                      <img src="/src/assets/arrowHover.svg" alt="arrow photo" />
-                    </div>
-                  </div>
-                </div>
-              </router-link>
-            </div>
-          </div>
         </div>
       </div>
     </div>
