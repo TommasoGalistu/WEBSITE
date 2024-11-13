@@ -8,6 +8,23 @@ export const data = reactive({
   cardProject: [
     {
       id: 1,
+      titolo: "BollBnb",
+      photo: "/BollBnb.png",
+      video: "/BoolBnb.mp4",
+      photoDescription: "photo of chat clone",
+      teamOrg: "Questo progetto mi ha messo alla prova e mi ha permesso di imparare moltissimo. Si trattava di un lavoro di gruppo, dove ciascuno si è occupato di una parte specifica per raggiungere l’obiettivo finale. Io mi sono concentrato principalmente sulla creazione dello scaffolding e sull'integrazione di Vue con Laravel. Ho deciso di inserire Vue all'interno della cartella resources di Laravel, modificando alcune impostazioni di base e montando l’app tramite una pagina Blade. Successivamente, ho integrato Sanctum e Fortify per gestire la registrazione e l’autenticazione degli utenti. Mi sono anche occupato di creare le chiamate API verso l'endpoint di TomTom per la ricerca degli indirizzi, implementando una tendina che appariva solo al termine della scrittura, con suggerimenti sui luoghi cercati. Ho realizzato i filtri della pagina di ricerca, il layout e lo stile della stessa. Inoltre, ho integrato il sistema di pagamenti tramite Braintree, simulando il pagamento da parte di uno sponsor per gli appartamenti. Infine, mi sono occupato della gestione e creazione dei dati per le statistiche visualizzabili dagli utenti tramite Chart.js. Inoltre, grazie alla mia propensione alla risoluzione dei problemi, sono stato incaricato di affrontare e risolvere i bug più complessi che si presentavano durante lo sviluppo.",
+
+      descrizione: "Si tratta di un progetto Fullstack sviluppato in gruppo, che riproduce una piattaforma di prenotazione simile a quelle per BnB, ma focalizzata su appartamenti in Italia. Il progetto utilizza Laravel per la gestione del database e Vue per le chiamate API. La piattaforma è completa e include una Home page, accessibile anche agli utenti non registrati, dove è possibile visualizzare gli appartamenti disponibili. È presente una pagina di ricerca che mostra i risultati con due colonne: una per gli appartamenti e una per la geolocalizzazione. Gli utenti registrati hanno accesso a una dashboard dove possono gestire i propri appartamenti, visualizzarli o eliminarli. Gli appartamenti sono comunque mantenuti nel sito per il calcolo delle statistiche globali. Inoltre, nella sezione di inserimento appartamenti, gli utenti possono visualizzare in anteprima i propri immobili, leggere i messaggi ricevuti e sponsorizzare il loro appartamento per farlo apparire in cima ai risultati.",
+
+      solution: "Questo progetto mi ha messo duramente alla prova e mi ha permesso di crescere molto. La prima sfida è stata integrare Vue con Laravel e gestire l'autenticazione. Con il mio background in Laravel, avevo già esperienza con Breeze, ma non mi convinceva come soluzione. Ho quindi cercato la via migliore e ho deciso di integrare Vue direttamente in Laravel, utilizzando Sanctum e Fortify per gestire l'autenticazione. Ho passato notti a capire come far funzionare tutto, ma alla fine sono riuscito a far comunicare Laravel e Vue tramite rotte API fornite da Fortify, ottenendo una grande soddisfazione quando finalmente ha funzionato. La seconda grande difficoltà è stata l'integrazione dei pagamenti con Braintree. La documentazione mi sembrava complessa, ma dopo aver guardato video e fatto ricerche, sono riuscito a comprenderne il funzionamento. In sintesi, tramite una chiamata API di Vue, Laravel comunica con Braintree, ottiene un token che passa a Vue, che lo utilizza per aprire un modulo di pagamento. Dopo l'inserimento dei dati della carta, Vue invia un token di verifica a Braintree, che restituisce un altro token se i dati sono corretti. Questo token viene passato a Laravel per completare il pagamento. È stato complicato da implementare in due giorni, ma sono felice di aver superato la sfida.",
+      tipo: ["Front-End"],
+      tecnologie: ["Vue", 'Laravel'],
+      isVisible: false,
+      link: "https://tgboolzclone.netlify.app/",
+      linkGit: "https://github.com/TommasoGalistu/BnB-FullStack-vue-laravel",
+    },
+    {
+      id: 2,
       titolo: "NextGen",
       photo: "/NextGen.png",
       photoDescription: "photo of nexgen project",
@@ -23,26 +40,12 @@ export const data = reactive({
       link: "https://projectgalistu.netlify.app/",
       linkGit: "https://github.com/TommasoGalistu/proj-html-vuejs",
     },
-    {
-      id: 2,
-      titolo: "BollBnb",
-      photo: "/BollBnb.mp4",
-      photoDescription: "photo of chat clone",
-      teamOrg: "Questo progetto mi ha messo alla prova e mi ha permesso di imparare moltissimo. Si trattava di un lavoro di gruppo, dove ciascuno si è occupato di una parte specifica per raggiungere l’obiettivo finale. Io mi sono concentrato principalmente sulla creazione dello scaffolding e sull'integrazione di Vue con Laravel. Ho deciso di inserire Vue all'interno della cartella resources di Laravel, modificando alcune impostazioni di base e montando l’app tramite una pagina Blade. Successivamente, ho integrato Sanctum e Fortify per gestire la registrazione e l’autenticazione degli utenti. Mi sono anche occupato di creare le chiamate API verso l'endpoint di TomTom per la ricerca degli indirizzi, implementando una tendina che appariva solo al termine della scrittura, con suggerimenti sui luoghi cercati. Ho realizzato i filtri della pagina di ricerca, il layout e lo stile della stessa. Inoltre, ho integrato il sistema di pagamenti tramite Braintree, simulando il pagamento da parte di uno sponsor per gli appartamenti. Infine, mi sono occupato della gestione e creazione dei dati per le statistiche visualizzabili dagli utenti tramite Chart.js. Inoltre, grazie alla mia propensione alla risoluzione dei problemi, sono stato incaricato di affrontare e risolvere i bug più complessi che si presentavano durante lo sviluppo.",
-
-      descrizione: "Si tratta di un progetto Fullstack sviluppato in gruppo, che riproduce una piattaforma di prenotazione simile a quelle per BnB, ma focalizzata su appartamenti in Italia. Il progetto utilizza Laravel per la gestione del database e Vue per le chiamate API. La piattaforma è completa e include una Home page, accessibile anche agli utenti non registrati, dove è possibile visualizzare gli appartamenti disponibili. È presente una pagina di ricerca che mostra i risultati con due colonne: una per gli appartamenti e una per la geolocalizzazione. Gli utenti registrati hanno accesso a una dashboard dove possono gestire i propri appartamenti, visualizzarli o eliminarli. Gli appartamenti sono comunque mantenuti nel sito per il calcolo delle statistiche globali. Inoltre, nella sezione di inserimento appartamenti, gli utenti possono visualizzare in anteprima i propri immobili, leggere i messaggi ricevuti e sponsorizzare il loro appartamento per farlo apparire in cima ai risultati.",
-
-      solution: "Questo progetto mi ha messo duramente alla prova e mi ha permesso di crescere molto. La prima sfida è stata integrare Vue con Laravel e gestire l'autenticazione. Con il mio background in Laravel, avevo già esperienza con Breeze, ma non mi convinceva come soluzione. Ho quindi cercato la via migliore e ho deciso di integrare Vue direttamente in Laravel, utilizzando Sanctum e Fortify per gestire l'autenticazione. Ho passato notti a capire come far funzionare tutto, ma alla fine sono riuscito a far comunicare Laravel e Vue tramite rotte API fornite da Fortify, ottenendo una grande soddisfazione quando finalmente ha funzionato. La seconda grande difficoltà è stata l'integrazione dei pagamenti con Braintree. La documentazione mi sembrava complessa, ma dopo aver guardato video e fatto ricerche, sono riuscito a comprenderne il funzionamento. In sintesi, tramite una chiamata API di Vue, Laravel comunica con Braintree, ottiene un token che passa a Vue, che lo utilizza per aprire un modulo di pagamento. Dopo l'inserimento dei dati della carta, Vue invia un token di verifica a Braintree, che restituisce un altro token se i dati sono corretti. Questo token viene passato a Laravel per completare il pagamento. È stato complicato da implementare in due giorni, ma sono felice di aver superato la sfida.",
-      tipo: ["Front-End"],
-      tecnologie: ["Vue", 'Laravel'],
-      isVisible: false,
-      link: "https://tgboolzclone.netlify.app/",
-      linkGit: "https://github.com/TommasoGalistu/BnB-FullStack-vue-laravel",
-    },
+   
     {
       id: 3,
       titolo: "Chat Clone",
       photo: "/Chat Clone.png",
+      video: '',
       photoDescription: "photo of chat clone",
       teamOrg:
         "Questo progetto è stato eseguito interamente da solo. Mi sono occupato della progettazione, dello sviluppo e della risoluzione dei problemi relativi alla gestione delle chat e delle interazioni utente. L'assenza di dati persistenti ha reso il lavoro un'interessante sfida di simulazione di interazioni reali.",
@@ -60,6 +63,7 @@ export const data = reactive({
       id: 4,
       titolo: "Netflix",
       photo: "/Netflix.png",
+      video: '',
       photoDescription: "photo of netflix clone",
       teamOrg:
         "Ho realizzato questo progetto individualmente, occupandomi dell'integrazione dell'API per il recupero dei dati sui film e della gestione della UI. La sfida principale è stata gestire le risposte incomplete dell'API in modo da garantire un'esperienza utente coerente.",
@@ -77,6 +81,7 @@ export const data = reactive({
       id: 5,
       titolo: "Slider",
       photo: "/Slider.png",
+      video: '',
       photoDescription: "photo of slider superhero",
       teamOrg:
         "Ho sviluppato questo progetto da solo, occupandomi della creazione dello slider e della gestione delle interazioni utente. L'obiettivo principale era rendere fluide le transizioni e garantire un'esperienza interattiva senza interruzioni.",
@@ -94,6 +99,7 @@ export const data = reactive({
       id: 6,
       titolo: "Dashboard",
       photo: "/Dashboard.png",
+      video: '',
       photoDescription: "photo of dashboard",
       teamOrg:
         "Questo progetto è stato sviluppato da solo con l'obiettivo di creare una dashboard responsive utilizzando Bootstrap. Mi sono occupato di tutta la progettazione e sviluppo, concentrandomi sulla disposizione dei componenti e sulla reattività.",
@@ -111,6 +117,7 @@ export const data = reactive({
       id: 7,
       titolo: "Spotify Web",
       photo: "/Spotify Web.png",
+      video: '',
       photoDescription: "photo of spotify",
       teamOrg:
         "Questo progetto è stato interamente realizzato da solo come primo approccio allo sviluppo front-end. Mi sono occupato della creazione del layout responsive, cercando di riprodurre l'interfaccia complessa di Spotify.",

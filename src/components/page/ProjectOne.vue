@@ -106,7 +106,7 @@ export default {
   },
   computed: {
     isPhoto() {
-      return this.card.photo.split(".")[1] === "png";
+      return this.card.video;
     },
   },
 };
@@ -120,12 +120,12 @@ export default {
         >
           <div class="contImg">
             <img
-              v-if="isPhoto"
+              v-if="!isPhoto"
               :src="card.photo"
               :alt="`foto di ${card.titolo}`"
             />
             <video v-else id="video" controls>
-              <source src="/BoolBnb.mp4" type="video/mp4" />
+              <source :src="card.video" type="video/mp4" />
               Il tuo browser non supporta il formato video.
             </video>
           </div>
