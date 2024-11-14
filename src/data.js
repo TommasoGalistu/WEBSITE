@@ -20,6 +20,7 @@ export const data = reactive({
       tipo: ["Full-stack"],
       tecnologie: ["Vue", 'Laravel'],
       isVisible: false,
+      responsive: false,
       link: "",
       linkGit: "https://github.com/TommasoGalistu/BnB-FullStack-vue-laravel",
     },
@@ -37,6 +38,8 @@ export const data = reactive({
       tipo: ["Front-End"],
       tecnologie: ["Html", "Css", "Js", "Vue", "Vite"],
       isVisible: false,
+      responsive: false,
+
       link: "https://projectgalistu.netlify.app/",
       linkGit: "https://github.com/TommasoGalistu/proj-html-vuejs",
     },
@@ -56,6 +59,8 @@ export const data = reactive({
       tipo: ["Front-End"],
       tecnologie: ["Html", "Css", "Js", "Vue", "Composition API"],
       isVisible: false,
+      responsive: false,
+
       link: "https://tgboolzclone.netlify.app/",
       linkGit: "https://github.com/TommasoGalistu/vue-boolzapp",
     },
@@ -74,6 +79,8 @@ export const data = reactive({
       tipo: ["Front-End"],
       tecnologie: ["Html", "Css", "Js", "Vue", "Option API", "Vite", "APIs"],
       isVisible: false,
+      responsive: false,
+
       link: "https://tgboolfix.netlify.app/",
       linkGit: "https://github.com/TommasoGalistu/vite-boolflix",
     },
@@ -92,6 +99,8 @@ export const data = reactive({
       tipo: ["Front-End"],
       tecnologie: ["Html", "Css", "Js", "Vue Cdn"],
       isVisible: false,
+      responsive: false,
+
       link: "https://tgslidervue.netlify.app",
       linkGit: "https://github.com/TommasoGalistu/vue-slider",
     },
@@ -110,6 +119,8 @@ export const data = reactive({
       tipo: ["Front-End"],
       tecnologie: ["Html", "Css", "Bootstrap", "Js"],
       isVisible: false,
+      responsive: true,
+
       link: "https://tgdashboardboot.netlify.app",
       linkGit: "https://github.com/TommasoGalistu/html-css-bootstrap-dashboard",
     },
@@ -128,6 +139,8 @@ export const data = reactive({
       tipo: ["Front-End"],
       tecnologie: ["Html", "Css", "Responsive"],
       isVisible: false,
+      responsive: true,
+
       link: "https://tgspotifyweb.netlify.app",
       linkGit: "https://github.com/TommasoGalistu/html-css-spotifyweb",
     },

@@ -83,6 +83,7 @@ export default {
     this.card = data.cardProject[this.$route.params.id];
   },
   mounted() {
+    console.log(window.innerWidth);
     // Crea un nuovo controller ScrollMagic
     // const controller = new ScrollMagic.Controller();
     // const pageHeight = document.documentElement.scrollHeight;
@@ -131,9 +132,9 @@ export default {
           </div>
           <h3 class="mt-1">{{ card.titolo }}</h3>
           <p class="lessImportant">{{ card.tipo[0] }}</p>
-          <a v-if="card.link" :href="card.link" class="button"
-            >Guarda il progetto</a
-          >
+          <a v-if="card.link" :href="card.link" class="button">{{
+            card.responsive ? "Guarda il progetto" : "Guarda da pc"
+          }}</a>
           <a :href="card.linkGit" class="button">GitHub</a>
         </div>
       </div>
@@ -169,7 +170,9 @@ export default {
             </div>
           </div>
           <div class="d-flex gap-2 justify-content-center">
-            <a :href="card.link" class="button tablet">Guarda il progetto</a>
+            <a v-if="card.link" :href="card.link" class="button">{{
+              card.responsive ? "Guarda il progetto" : "Guarda da pc"
+            }}</a>
             <a :href="card.linkGit" class="button tablet">GitHub</a>
           </div>
         </div>
