@@ -129,7 +129,8 @@ export default {
               <strong
                 >HTML, CSS, JavaScript, Vue.js, PHP, Laravel, MySQL</strong
               >
-              e <strong>Git</strong>. Il corso ha previsto esercizi pratici e
+              e <strong>Git</strong>. Il corso prevedeva lezioni teoriche la
+              mattina, esercizi pratici il pomeriggio per fare pratica e
               progetti reali, con l’adozione di metodologie Agile per il
               miglioramento continuo e la collaborazione efficace.
             </p>
