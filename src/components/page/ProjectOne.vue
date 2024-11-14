@@ -131,7 +131,9 @@ export default {
           </div>
           <h3 class="mt-1">{{ card.titolo }}</h3>
           <p class="lessImportant">{{ card.tipo[0] }}</p>
-          <a :href="card.link" class="button">Guarda il progetto</a>
+          <a v-if="card.link" :href="card.link" class="button"
+            >Guarda il progetto</a
+          >
           <a :href="card.linkGit" class="button">GitHub</a>
         </div>
       </div>
