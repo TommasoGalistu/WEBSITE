@@ -25,4 +25,12 @@ export default {
 </template>
 <style lang='scss'>
 @import "./style/_variable.scss";
+
+main {
+  min-height: 63vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+}
 </style>

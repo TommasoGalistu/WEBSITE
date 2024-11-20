@@ -14,11 +14,6 @@ export default {
         <div
           class="col d-flex flex-column justify-content-center align-items-center"
         >
-          <router-link :to="{ name: 'Home' }">
-            <div class="contImg">
-              <img src="/logo.png" alt="" />
-            </div>
-          </router-link>
           <nav class="d-flex justify-content-center gap-2 menuLaptop">
             <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
             <router-link class="link" :to="{ name: 'Selfsummary' }"
@@ -31,7 +26,7 @@ export default {
               >Contact</router-link
             >
           </nav>
-          <div>
+          <div class="d-flex justify-content-center">
             <a
               href="https://www.freeprivacypolicy.com/live/51021a08-f94a-4620-a11a-5a8ad88cb936"
               >Privacy</a
@@ -45,7 +40,7 @@ export default {
 <style lang='scss' scoped>
 // @use 'path' as *;
 footer {
-  margin: 5rem 0;
+  padding-bottom: 2rem;
 }
 .contImg {
   width: 5rem;

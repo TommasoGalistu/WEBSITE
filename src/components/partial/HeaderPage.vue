@@ -99,6 +99,10 @@ export default {
 </template>
 <style lang='scss' scoped>
 @import "./../../style/_variable.scss";
+header {
+  height: 4rem;
+  padding-top: 0.5rem;
+}
 .contImg {
   height: 4rem;
   img {

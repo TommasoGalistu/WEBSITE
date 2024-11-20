@@ -56,7 +56,7 @@ export default {
 </script>
 <template>
   <div class="container">
-    <div class="row">
+    <div class="row justify-content-center">
       <div class="col-lg-4 col-sm-12 d-flex justify-content-center">
         <div class="tcard image">
           <div class="contImg">
@@ -64,7 +64,7 @@ export default {
           </div>
         </div>
       </div>
-      <div class="col-lg-8 d-flex flex-column align-items-stretch">
+      <div class="col-lg-8 col-sm-12 d-flex flex-column">
         <div class="row">
           <div class="col-12 text-center">
             <h2 class="title">SELF-SUMMARY</h2>
@@ -75,8 +75,13 @@ export default {
             <div class="tcard firstDescription">
               <h2>Tommaso Galistu</h2>
               <p class="lessImportant">
-                Vivo a Roma e sono un junior full stack developer. Ho esperienza
-                con Javascript e Php e i rispettivi framework Vue e Laravel.
+                Sono una persona dinamica e determinata, sempre pronta a
+                mettermi in gioco e affrontare nuove sfide con entusiasmo. La
+                mia curiosità mi porta a esplorare nuove realtà e alimenta una
+                profonda passione per i viaggi. Vedo nella programmazione
+                l'opportunità di trasformare idee in soluzioni concrete e utili
+                per la comunità, realizzando progetti che uniscono creatività e
+                innovazione.
               </p>
             </div>
           </div>
@@ -199,10 +204,11 @@ export default {
   margin-bottom: 2rem;
 }
 .firstDescription {
-  height: 12.5rem;
+  // height: 12.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-bottom: 2.3rem;
 }
 .experience {
   margin-bottom: 2rem;
@@ -240,6 +246,12 @@ export default {
   .routeCenter,
   .certification {
     margin-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .firstDescription {
+    padding-top: 1rem;
+    padding-bottom: 1.3rem;
   }
 }
 </style>
